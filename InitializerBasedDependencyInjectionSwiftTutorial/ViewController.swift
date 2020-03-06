@@ -8,13 +8,25 @@
 
 import UIKit
 
+class InjectedClass {
+    let injectedVariable: String
+    
+    init(injectedVariable: String) {
+        self.injectedVariable = injectedVariable
+    }
+    
+    func printVariable() {
+        print(injectedVariable)
+    }
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        let injectedObject = InjectedClass(injectedVariable: "I'm injected!")
+        injectedObject.printVariable()
     }
-
-
 }
 
